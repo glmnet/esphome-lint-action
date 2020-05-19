@@ -1,0 +1,13 @@
+name: "ESPHome CPP Lint Action"
+description: 'GitHub Actions Lint Action for esphome/esphome repo'
+inputs:
+  run:
+    description: 'Command to run'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '-c'
+    - ${{ inputs.run }}
